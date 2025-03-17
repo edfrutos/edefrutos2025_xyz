@@ -1,0 +1,29 @@
+from flask import Flask, render_template, redirect, url_for, request
+import logging
+
+# Configurar logging
+logging.basicConfig(
+    filename='/var/www/vhosts/edefrutos2025.xyz/httpdocs/app_flask.log',
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    app.logger.info("Página principal visitada")
+    return "<h1>¡La aplicación Flask está funcionando con Gunicorn!</h1>"
+
+@app.route('/info')
+def info():
+    import sys
+    import os
+    app.logger.info("Página de información visitada")
+    html = "<h1>Información de depuración</h1>"
+    html += f"<p>Python version: {sys.version}</p>"
+    html += f"<p>Directorio actual: {os.getcwd()}</p>"
+    return html
+
+if __name__ == '__main__':
+    app.run(debug=True)

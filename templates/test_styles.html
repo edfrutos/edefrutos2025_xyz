@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de Estilos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}?v={{ css_version }}">
+    <style>
+        .test-box {
+            border: 3px solid red;
+            padding: 20px;
+            margin: 20px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Prueba de Estilos</h1>
+        </header>
+        
+        <main>
+            <div class="test-box">
+                <h2>Cuadro de prueba</h2>
+                <p>Si ves este cuadro con borde rojo y fondo amarillo, los estilos inline funcionan.</p>
+                <p>Si toda la página tiene un fondo degradado y texto en Roboto, el CSS externo funciona.</p>
+            </div>
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 Catalogo de Tablas - Todos los derechos reservados.</p>
+        </footer>
+    </div>
+</body>
+</html>

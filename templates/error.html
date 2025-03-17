@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Error - {{ titulo }}{% endblock %}
+
+{% block header %}{{ titulo }}{% endblock %}
+
+{% block content %}
+<div class="error-container">
+    <div class="error-message">
+        <p>{{ mensaje }}</p>
+        
+        {% if codigo == 404 %}
+            <p>La página que buscas no existe o ha sido movida.</p>
+        {% elif codigo == 500 %}
+            <p>Ha ocurrido un error interno en el servidor. Por favor, inténtalo de nuevo más tarde.</p>
+        {% endif %}
+        
+        <p>
+            <a href="{{ url_for('index') }}" class="btn-primary">Volver al inicio</a>
+        </p>
+    </div>
+</div>
+{% endblock %}
