@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Instalación
 
 # app_catalogojoyero
@@ -248,3 +249,7 @@ Puedes usar este proyecto como base para tu catálogo, adaptarlo, agregar valida
 ---
 
 ¡Y con esto tendrás tu catálogo de joyas en Flask, guardando y mostrando **múltiples imágenes** por fila en tu Excel!
+=======
+# edefrutos2025_xyz
+Aplicación EDF Catalogo de Tablas puesta enproducción en edefrutos2025.xyz
+>>>>>>> 434e4f2b0ae34604932f1e7e9b372699f726e9b8
