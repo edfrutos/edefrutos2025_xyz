@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo Tablas - Gestión de Productos</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}?v={{ css_version }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <script src="{{ url_for('static', filename='script.js') }}"></script>
   </head>
@@ -28,14 +28,14 @@
       {% endif %}
 
       <header>
-        <h1>Catálogo de la Tabla {{ session.get('selected_table_name', 'Nombre de la Tabla') }}</h1>
+        <h1 class="index">Catálogo de la Tabla {{ session.get('selected_table_name', 'Nombre de la Tabla') }}</h1>
       </header>
 
         <div style="margin-bottom: 1rem">
           <button type="button" onclick="window.location.href='/tables'" class="btn-secondary mt-2">
             Opciones de Tabla
           </button>
-          <button type="button" onclick="if(confirm('¿Estás seguro de que deseas renumerar todos los registros?')) { window.location.href='/renumerar/{{ session.get("selected_table") }}'; }" class="btn-secondary mt-2" style="margin-left: 10px;">
+          <button type="button" onclick="if(confirm('¿Estás seguro de que deseas renumerar todos los registros?')) { window.location.href='/renumerar/{{ session.get("selected_table") }}'; }" class="btn-secondary mt-2">
             Renumerar Registros
           </button>
         </div>
@@ -46,7 +46,7 @@
   {% endif %}
   
   {% if success_message %}
-<section id="formulario-agregar">
+<section id="formulario-agregar" class="formulario-agregar">
         <h2>Agregar Nuevo Registro</h2>
   {% endif %}
   
@@ -65,7 +65,7 @@
       </section>
 
       <section id="instrucciones">
-        <h2>Instrucciones para el Catálogo</h2>
+        <h2 class="instrucciones">Instrucciones para el Catálogo</h2>
         <ul>
           <li><strong>Agregar Registro:</strong> Completa el formulario y asegúrate de que el "Número" sea único.</li>
           <li><strong>Descargar Excel:</strong> Usa el enlace "Descargar Excel" para obtener el archivo ZIP.</li>
@@ -75,8 +75,8 @@
         </ul>
       </section>
 
-      <section id="tabla-registros">
-        <h2>Listado de Registros</h2>
+      <section id="tabla-registros" class="tabla-registros">
+        <h2 class="listado-registros">Listado de Registros</h2>
         <table>
           <thead>
             <tr>

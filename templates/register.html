@@ -6,7 +6,7 @@
 
 {% block content %}
 <section id="register-form">
-    <form method="POST">
+    <form method="POST" class="register-form">
         <p>
             <label for="nombre">Nombre de Usuario:</label>
             <input
@@ -36,6 +36,7 @@
                 placeholder="Elige una contraseña segura"
                 required
             />
+            <span class="toggle-password" onclick="togglePasswordVisibility()">👁️</span>
         </p>
         <p>
             <label for="confirm_password">Confirmar Contraseña:</label>
@@ -46,13 +47,24 @@
                 placeholder="Repite la contraseña"
                 required
             />
+            <span class="toggle-password" onclick="togglePasswordVisibility()">👁️</span>
         </p>
         <p>
-            <input type="submit" value="Registrarse" class="btn-primary" />
+            <input type="submit" value="Registrarse" class="login btn-primary" />
         </p>
     </form>
     <p>
         ¿Ya tienes cuenta? <a href="{{ url_for('login') }}">Inicia sesión aquí</a>
     </p>
 </section>
+<script>
+    function togglePasswordVisibility() {
+        const passwordInput = document.getElementById("password");
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+        } else {
+            passwordInput.type = "password";
+        }
+    }
+</script>
 {% endblock %}

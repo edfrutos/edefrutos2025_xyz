@@ -16,14 +16,14 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 13px;
 }
 
 header,
 footer {
     background-color: #333;
     color: #fff;
-    text-align: center;
+    text-align: left;
     padding: 1em;
 }
 
@@ -33,14 +33,26 @@ main {
     padding: 10rem;
 }
 
+.top-right {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    background: black;
+}
+
 .container {
-    width: 100%;
-    max-width: 1200px;
+    width: 50%;
+    /* max-width: 1200px; */
     margin: 2rem auto;
     padding: 2rem;
     background: rgba(255, 255, 255, 0.95);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+}
+
+section#formulario-agregar {
+    width: 50%;
+    margin: 0 auto;
 }
 
 /* Encabezados */
@@ -49,6 +61,12 @@ h2,
 h3 {
     margin: 1rem;
     color: #007bff;
+}
+
+h2.instrucciones {
+    margin: 0 auto;
+    width: 30%;
+    margin-bottom: 1rem;
 }
 
 /* --- FORMULARIOS --- */
@@ -60,6 +78,8 @@ form {
     padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    margin-top: 2rem;
 }
 
 form label {
@@ -111,6 +131,21 @@ form input:focus {
     background-color: #0056b3;
 }
 
+button.btn-primary {
+    display: inline-block;
+    background-color: #017bfe;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    margin: 0.2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background 0.2s ease;
+}
+
 /* Botón secundario para acciones como "Cerrar Sesión (usuario)" y "Opciones de tabla" */
 .btn-secondary {
     display: inline-block;
@@ -158,22 +193,23 @@ button.btn-secondary.mt-1 {
 }
 
 button.btn-secondary.mt-2 {
-    margin-top: 2rem;
-    width: 100%;
+    margin: 2rem auto;
+    width: 80%;
+    display: flex;
+    justify-content: center;
 }
 
 /* --- ENLACES --- */
 .download-link {
     display: flex;
-    margin-top: 1rem;
+    margin-top: 2rem !important;
     padding: 0.75rem 1.5rem;
     background-color: #28a745;
     color: #fff;
     text-decoration: none;
     border-radius: 4px;
     font-weight: 500;
-    transition: background 0.2sease;
-    width: 50%;
+    transition: background 0.2s ease;
     margin: 0 auto;
     justify-content: center;
     margin-bottom: 1rem;
@@ -212,6 +248,17 @@ table {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     overflow: hidden;
+}
+
+section#tabla-registros {
+    width: 70%;
+    margin: 0 auto;
+}
+
+h2.listado-registros {
+    width: 15%;
+    margin: 0 auto;
+    margin-top: 2rem;
 }
 
 th,
@@ -267,7 +314,7 @@ th {
     background-color: #fff;
     max-width: 1200px;
     width: 90%;
-    margin: 2rem;
+    margin: 2rem auto;
     padding: 1.5rem;
     border-radius: 8px;
     position: relative;
@@ -294,9 +341,11 @@ th {
 
 /* Estilos para las secciones de ayuda e instrucciones */
 #instrucciones {
+    width: 50%;
+    margin: 0 auto;
     background-color: #e2e2e2;
     padding: 1em;
-    margin-top: 2em;
+    margin-top: 2em !important;
     border-left: 5px solid #333;
 }
 
@@ -392,4 +441,179 @@ p {
         .flash-error {
             background-color: #f8d7da;
             color: #721c24;
+        }
+
+        /* Inicio de sesión */
+        input.login.btn-primary {
+            background: #0065cc;
+            width: 150px;
+            font: status-bar;
+            border: #0065cc;
+            border-block-color: revert;
+            color: white;
+            padding: .5rem;
+            border-radius: 4px;
+        }
+        
+        @media (max-width: 576px) {
+            .top-right {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                background: black;
+            }
+            button.btn-secondary.mt-1 {
+                margin: 2rem;
+                width: 80%;
+            }
+            .container {
+                width: 100%;
+                margin: 0rem auto;
+                padding: 1rem;
+            }
+            main {
+                padding: 0.3rem;
+                margin-top: 1vh;
+                width: 100%;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            section#formulario-agregar {
+                width: 100%;
+            }
+            section#tabla-registros {
+                width: 100%;
+            }
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                width: 100%;
+            }
+            a.btn.btn-logout {
+                display: flex;
+                justify-content: center;
+                width: 50%;
+                margin: 0 auto;
+            }
+            a.btn.seleccionar {
+                width: 50%;
+                display: flex;
+                margin: 0 auto;
+                justify-content: center;
+            }
+            h2.listado-registros {
+                width: 100%;
+                margin: 0 auto;
+                margin-top: 2rem;
+            }
+            h2.instrucciones {
+                width: 100%;
+                font-size: 20px;
+            }
+            h1.index {
+                font-size: 1.2rem;
+            }
+            #instrucciones {
+                width: 100%;
+                margin: 0 auto;
+                background-color: #e2e2e2;
+                padding: 1em;
+                margin-top: 2em !important;
+                border-left: 5px solid #333;
+            }
+            tbody {
+                width: 350px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                width: 100%;
+                margin: 0rem auto;
+                padding: 1rem;
+            }
+            main {
+                padding: 5rem;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            h2.instrucciones {
+                width: 100%;
+            }
+            section#formulario-agregar {
+                width: 100%;
+                margin: 0 auto;
+            }
+            #instrucciones {
+                width: 100%;
+            }
+            h2.listado-registros {
+                width: 25%;
+                margin: 0 auto;
+                margin-top: 2rem;
+            }
+            section#tabla-registros {
+                width: 100%;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .container {
+                width: 100%;
+                margin: 0rem auto;
+                padding: 1rem;
+            }
+            main {
+                padding: 7rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            section#formulario-agregar {
+                width: 50% !important;
+                margin: 0 auto;
+            }
+            #instrucciones {
+                width: 50% !important;
+            }
+            h2.listado-registros {
+                width: 25%;
+                margin: 0 auto;
+                margin-top: 2rem;
+                margin-bottom: 2rem;
+            }
+        } 
+        
+        @media (min-width: 1200px) {
+            .container {
+                width: 60vw;
+                margin: 0rem auto;
+                padding: 1rem;
+            }
+            main {
+                padding: 5rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            section#formulario-agregar {
+                width: 50% !important;
+                margin: 0 auto;
+            }
+            #instrucciones {
+                width: 50% !important;
+            }
+            section#tabla-registros {
+                width: 70%;
+                margin: 0 auto;
+            }
+            h2.listado-registros {
+                width: 25%;
+                margin: 0 auto;
+                margin-top: 2rem;
+                margin-bottom: 2rem;
+            }
         }

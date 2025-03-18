@@ -3,20 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <title>Mis Tablas de Catálogo</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}?v={{ css_version }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
   </head>
   <body>
     <div class="container">
       {% if session.usuario %}
       <div class="top-right">
+      <h1>Mis Tablas de Catálogo</h1>
         <button type="button" class="btn btn-logout" onclick="window.location.href='/logout'">
           Cerrar Sesión ({{ session.usuario }})
         </button>
       </div>
       {% endif %}
-      <h1>Mis Tablas de Catálogo</h1>
+      
 
       <h2>Crear o Importar Tabla</h2>
       <form method="POST" enctype="multipart/form-data">
@@ -47,7 +47,7 @@
         {% for table in tables %}
         <li>
           <strong>{{ table.name }}</strong> - Creada el {{ table.created_at.strftime("%Y-%m-%d %H:%M") if table.created_at else 'Fecha no disponible' }}
-          <a href="/select_table/{{ table._id }}" class="btn">Seleccionar</a>
+          <a href="/select_table/{{ table._id }}" class="btn seleccionar">Seleccionar</a>
           <!-- Botón para eliminar la tabla -->
           <form action="/delete_table/{{ table._id }}" method="POST" class="form-action" style="display:inline;">
             <button
