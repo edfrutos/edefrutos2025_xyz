@@ -1,9 +1,9 @@
 <<<<<<< HEAD
 ## Instalación
 
-# app_catalogojoyero
+# edf_catalogo_tablas
 
-Una aplicación web desarrollada en Flask para gestionar catálogos de joyería mediante hojas de cálculo (Excel) y gestión de imágenes. Cada usuario puede crear, importar, editar y descargar su catálogo, el cual se almacena en archivos Excel y se complementa con imágenes. Además, incluye autenticación de usuarios, recuperación de contraseña mediante token enviado por correo y despliegue en Heroku.
+Una aplicación web desarrollada en Flask para gestionar catálogos de tablas mediante hojas de cálculo (Excel) y gestión de imágenes. Cada usuario puede crear, importar, editar y descargar su catálogo, el cual se almacena en archivos Excel y se complementa con imágenes. Además, incluye autenticación de usuarios, recuperación de contraseña mediante token enviado por correo y despliegue en Heroku.
 
 ## Características
 
@@ -32,7 +32,7 @@ Una aplicación web desarrollada en Flask para gestionar catálogos de joyería 
 ## Estructura del Proyecto
 
 ```plaintext
-app_catalogojoyero/
+edf_catalogo_tablas/
 ├── app.py                # Aplicación principal en Flask
 ├── Procfile              # Archivo para desplegar en Heroku (ej.: "web: gunicorn app:app")
 ├── requirements.txt      # Dependencias del proyecto
@@ -56,8 +56,8 @@ app_catalogojoyero/
 Instalación y Configuración
 	1.	Clonar el repositorio:
 
-git clone https://github.com/tu_usuario/app_catalogojoyero.git
-cd app_catalogojoyero
+git clone https://github.com/tu_usuario/edf_catalogo_tablas.git
+cd edf_catalogo_tablas
 
 
 	2.	Crear y activar un entorno virtual (opcional, pero recomendado):
@@ -162,7 +162,7 @@ pip install flask openpyxl werkzeug
 La estructura mínima sugerida para el proyecto es:
 
 ```ini
-app_catalogojoyero/
+edf_catalogo_tablas/
 ├── app.py
 ├── imagenes_subidas/
 │   └─ (aquí se guardarán las imágenes subidas)
@@ -182,7 +182,7 @@ app_catalogojoyero/
 1. **Ubícate** en la carpeta raíz del proyecto, por ejemplo:
 
 ```bash
-cd app_catalogojoyero/
+cd edf_catalogo_tablas/
 ```
 
 2. **Instala** las dependencias si no lo has hecho:
