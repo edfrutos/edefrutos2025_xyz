@@ -1,0 +1,20 @@
+# Asegúrate de que mod_rewrite está habilitado
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # No aplicar proxy a archivos estáticos
+    RewriteCond %{REQUEST_URI} !^/static/
+    RewriteCond %{REQUEST_URI} !^/test.html$
+    
+    # Aplicar proxy a todo lo demás
+    RewriteRule ^(.*)$ http://127.0.0.1:8000/$1 [P,L]
+</IfModule>
+
+# Configuración alternativa si mod_proxy está disponible directamente
+<IfModule mod_proxy.c>
+    ProxyPreserveHost On
+    ProxyPass /static/ !
+    ProxyPass /test.html !
+    ProxyPass / http://127.0.0.1:8000/
+    ProxyPassReverse / http://127.0.0.1:8000/
+</IfModule>
