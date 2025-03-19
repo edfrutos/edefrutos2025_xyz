@@ -454,6 +454,14 @@ p {
             padding: .5rem;
             border-radius: 4px;
         }
+
+        section#manual {
+            padding-top: 3rem;
+        }
+
+        section#ayuda {
+            padding-bottom: 3rem;
+        }
         
         @media (max-width: 576px) {
             .top-right {
@@ -525,6 +533,9 @@ p {
             }
             tbody {
                 width: 350px;
+            }
+            section#manual {
+                padding: .2rem;
             }
         }
 
